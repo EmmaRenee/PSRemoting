@@ -49,7 +49,7 @@ foreach ($computer in $computers) {
           LogWrite "-- Register PSSession Configuration"
         
           winrs /r:$computer powershell -noprofile -command {register-pssessionconfiguration microsoft.powershell -NoServiceRestart -Force}
-          #winrs /r:$computer powershell -noprofile -command {register-pssessionconfiguration microsoft.powershell32 -NoServiceRestart -Force}
+          winrs /r:$computer powershell -noprofile -command {register-pssessionconfiguration microsoft.powershell32 -NoServiceRestart -Force}
           
           LogWrite "-- Restarting WinRM Service"
           
